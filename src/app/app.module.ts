@@ -21,8 +21,13 @@ import { AppCandidateComponent } from './components/app-candidate/app-candidate.
     ReactiveFormsModule,
     HttpClientModule
   ],
-  declarations: [AppComponent, HelloComponent],
-  bootstrap: [AppComponent, AppNewCandidateComponent, AppCandidateComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    AppNewCandidateComponent,
+    AppCandidateComponent
+  ],
+  bootstrap: [AppComponent],
   providers: [CandidateService]
   // exports: [MatCheckboxModule]
 })

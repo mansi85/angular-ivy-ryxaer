@@ -1,18 +1,22 @@
 <h1>Add New Candidate</h1>
 <form [formGroup]="candidateForm" (ngSubmit)="onSubmit()">
-  <label for="firstName">First Name</label>
-  <input id="firstName" type="text" formControlName = "firstName">
+  <div>
+    <label for="firstName" class="mr-2" >First Name</label>
+    <input id="firstName" type="text" formControlName = "firstName">
+  </div>
 
-  <label for="lastName">Last Name</label>
+  <label for="lastName" class="mr-2">Last Name</label>
   <input id="lastName" type="text" formControlName = "lastName">
 
-  <label for="email">First Name</label>
-  <input id="email" type="text" formControlName = "email">
+  <div>
+    <label for="email" class="mr-2">Email</label>
+    <input id="email" type="text" formControlName = "email">
+  </div>
 
-  <input type="radio" formControlName="gender" value="female" id="female">Female
+  <input type="radio" formControlName="gender" value="female" id="female">
   <label for="female">Female</label>
 
-  <input type="radio" formControlName="gender" value="male" id="male">Male
+  <input type="radio" formControlName="gender" value="male" id="male">
   <label for="male">Male</label>
 
   <button class="button" type="submit">Add</button>

@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-candidate',
-  templateUrl: 'app-new-candidate.component.html'
+  templateUrl: './app-new-candidate.component.html'
 })
 export class AppNewCandidateComponent {
   candidateForm = new FormGroup({
@@ -12,4 +12,8 @@ export class AppNewCandidateComponent {
     email: new FormControl(''),
     gender: new FormControl('')
   });
+
+  onSubmit() {
+    console.log('Candidate added');
+  }
 }

@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
 import { CandidateService } from '../../services/candidate.service';
+import * as candidateList from '../../models/data.json';
 
 @Component({
-  selector: 'app-new-candidate',
-  templateUrl: 'app-new-candidate.component.html'
+  selector: 'app-candidate',
+  templateUrl: './app-candidate.component.html'
 })
 export class AppCandidateComponent {
   female = false;
   male = false;
-  candidatesList: Array<object>;
+  candidatesList = candidateList;
 
   searchTerm = '';
 
   constructor(private candidateService: CandidateService) {}
 
   ngOnInit() {
-    this.candidateService
-      .getCandidatesList()
-      .subscribe(data => (this.candidatesList = data));
+    this.candidateService.getCandidatesList().subscribe(data => {
+      this.candidatesList = data;
+      console.log(data);
+    });
   }
 
   filterCandidateList() {
