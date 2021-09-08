@@ -1,0 +1,20 @@
+<h1>Add New Candidate</h1>
+<form [formGroup]="candidateForm" (ngSubmit)="onSubmit()">
+  <label for="firstName">First Name</label>
+  <input id="firstName" type="text" formControlName = "firstName">
+
+  <label for="lastName">Last Name</label>
+  <input id="lastName" type="text" formControlName = "lastName">
+
+  <label for="email">First Name</label>
+  <input id="email" type="text" formControlName = "email">
+
+  <input type="radio" formControlName="gender" value="female" id="female">Female
+  <label for="female">Female</label>
+
+  <input type="radio" formControlName="gender" value="male" id="male">Male
+  <label for="male">Male</label>
+
+  <button class="button" type="submit">Add</button>
+
+</form>

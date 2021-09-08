@@ -1,0 +1,23 @@
+<h1>Candidates</h1>
+
+<input type="checkbox" id="female" name="female" value="female">Female
+<input type="checkbox" id="female" name="female" value="female">Male
+<!-- <mat-checkbox [(ngModel)]="female">Female</mat-checkbox>
+<mat-checkbox [(ngModel)]="male">Male</mat-checkbox> -->
+
+<input type="search" id="searchContent" name="searchContent" onsearch="filterCandidateList()" [(ngModel)]="searchTerm">
+
+<table>
+  <thead>
+    <td>#</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+    <td>Gender</td>
+  </thead>
+  <tbody>
+    <tr *ngFor="let candidate in candidatesList | keyvalue">
+      <td>{{candidate.value}}</td>
+    </tr>
+  </tbody>
+</table>
