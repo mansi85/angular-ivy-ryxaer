@@ -5,7 +5,7 @@
 <!-- <mat-checkbox [(ngModel)]="female">Female</mat-checkbox>
 <mat-checkbox [(ngModel)]="male">Male</mat-checkbox> -->
 
-<input type="search" id="searchContent" name="searchContent" onsearch="filterCandidateList()" [(ngModel)]="searchTerm">
+<input type="text" onkeyup="filterCandidateList()" [(ngModel)]="searchTerm">
 
 <table>
   <thead>
@@ -16,8 +16,16 @@
     <td>Gender</td>
   </thead>
   <tbody>
-    <tr *ngFor="let candidate in candidatesList | keyvalue">
-      <td>{{candidate.value}}</td>
+    <tr *ngFor="let candidate of candidatesList">
+      <td>{{candidate['id'] | json}}</td>
+
+      <td>{{candidate['first_name']}}</td>
+
+      <td>{{candidate['last_name']}}</td>
+
+      <td>{{candidate['email']}}</td>
+
+      <td>{{candidate['gender']}}</td>
     </tr>
   </tbody>
 </table>
