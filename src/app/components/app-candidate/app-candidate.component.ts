@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CandidateService } from '../../services/candidate.service';
-import * as candidateList from '../../models/data.json';
+// import { CandidateService } from '../../services/candidate.service';
+// import * as candidateList from '../../models/data.json';
 
 @Component({
   selector: 'app-candidate',
@@ -9,15 +10,14 @@ import * as candidateList from '../../models/data.json';
 export class AppCandidateComponent {
   female = false;
   male = false;
-  candidatesList = candidateList;
-
+  candidatesList;
   searchTerm = '';
 
   constructor(private candidateService: CandidateService) {}
 
   ngOnInit() {
     this.candidateService.getCandidatesList().subscribe(data => {
-      this.candidatesList = data;
+      this.candidatesList = JSON.stringify(data);
       console.log(data);
     });
   }
@@ -27,7 +27,7 @@ export class AppCandidateComponent {
       candidate =>
         candidate['firstNAme'].includes(this.searchTerm) ||
         candidate['firstNAme'].includes(this.searchTerm) ||
-        candidate['email'].include(this.searchTerm)
+        candidate['email'].includes(this.searchTerm)
     );
   }
 }
